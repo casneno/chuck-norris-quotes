@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HomePage</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Chuck Norris Jokes</h1>
+    <p>Welcome to Chuck's Jokes</p>
+    <form action="/" method="GET">
+      <% categories.forEach(function(category) {%> <!-- cycle through the categories array and create an input of type radio for each category -->
+        <input type="radio" name="category" value="<%=category%>"><%=category%>
+      <% })%>
+      <button type="submit">Get Chuck Norris Joke</button> <!-- Submit the decision -->
+    </form>
+    <p><%= selectJoke.value %></p> <!-- Display the Joke. Doesn't need to be inside of the <form>, since it is retrieving the chosen data straight from the database -->
+  </body>
+</html>
